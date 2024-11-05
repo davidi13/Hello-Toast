@@ -1,41 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
+    android:background="#FFFFFF"
     tools:context=".MainActivity"
-    android:layout_margin="10dp">
+    android:layout_margin="16dp">
 
+    <!-- Botón de Toast -->
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/button_toast"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/blue"
-        android:id="@+id/button_toast"
         android:text="TOAST"
         android:textStyle="bold"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
 
-    <TextView
-        android:id="@+id/show_count"
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:text="0"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:textSize="180sp"
-        android:textColor="@color/blue"
-        android:background="@color/yellow"/>
-
+    <!-- Botón de Count debajo del de Toast -->
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/button_count"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/blue"
         android:text="COUNT"
-        android:id="@+id/button_count"
         android:textStyle="bold"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:layout_below="@id/button_toast"
+        android:layout_alignStart="@id/button_toast" />
 
-</LinearLayout>
+    <!-- TextView para mostrar el contador -->
+    <TextView
+        android:id="@+id/show_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textStyle="bold"
+        android:textSize="180sp"
+        android:textColor="@color/blue"
+        android:background="@color/yellow"
+        android:layout_toEndOf="@id/button_toast" />
+</RelativeLayout>
